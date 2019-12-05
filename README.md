@@ -8,3 +8,4 @@ This is a Unity Project template with the Liminal SDK installed.
 ## Project Settings
 - Android ready
 - Oculus VR Ready
+- Graphics & Quality settings to Liminal's standards
