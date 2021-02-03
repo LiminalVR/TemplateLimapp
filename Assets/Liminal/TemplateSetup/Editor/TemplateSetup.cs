@@ -17,6 +17,12 @@
             EditorApplication.update += Init;
         }
 
+        [MenuItem("Liminal/Reset Setup Key")]
+        private static void ResetKey()
+        {
+            EditorPrefs.SetBool(IsSetupKey, false);
+        }
+
         private static void Init()
         {
             EditorApplication.update -= Init;
