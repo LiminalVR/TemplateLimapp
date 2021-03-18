@@ -1,4 +1,7 @@
-﻿namespace Liminal.Editor.TemplateSetup
+﻿using System.IO;
+using Newtonsoft.Json;
+
+namespace Liminal.Editor.TemplateSetup
 {
     using UnityEngine;
     using UnityEditor;
@@ -7,12 +10,18 @@
     public class TemplateSetup
         : MonoBehaviour
     {
-        public const string IsSetupKey = "TemplateSetupComplete";
+        public static string SetupInfoPath => Application.dataPath + "/Liminal/TemplateSetup/liminal_setup";
+        public static bool IsSetup { get; set; }
 
         static TemplateSetup()
         {
-            if(EditorPrefs.GetBool(IsSetupKey, false))
+            if (File.Exists(SetupInfoPath))
+            {
+                IsSetup = true;
                 return;
+            }
+
+            IsSetup = false;
 
             EditorApplication.update += Init;
         }
@@ -20,7 +29,8 @@
         [MenuItem("Liminal/Reset Setup Key")]
         private static void ResetKey()
         {
-            EditorPrefs.SetBool(IsSetupKey, false);
+            File.Delete(SetupInfoPath);
+            IsSetup = false;
         }
 
         private static void Init()

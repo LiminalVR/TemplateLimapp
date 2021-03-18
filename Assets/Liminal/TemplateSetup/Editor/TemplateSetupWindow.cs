@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -72,7 +73,9 @@ namespace Liminal.Editor.TemplateSetup
         {
             if (_pageIndex >= _pages.Count - 1)
             {
-                EditorPrefs.SetBool(TemplateSetup.IsSetupKey, true);
+                TemplateSetup.IsSetup = true;
+                var f = File.Create(TemplateSetup.SetupInfoPath);
+                f.Close();
                 Close();
             }
 
