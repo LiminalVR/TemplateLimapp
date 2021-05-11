@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -9,7 +8,7 @@ namespace Liminal.Editor.TemplateSetup
     public class TemplateSetupWindow
         : EditorWindow
     {
-        [MenuItem("Window/Template Setup")]
+        [MenuItem("Liminal/Template Setup")]
         public static void OpenWindow()
         {
             TemplateSetupWindow window = (TemplateSetupWindow)GetWindow(typeof(TemplateSetupWindow), true, "Liminal App Template Setup", true);
@@ -22,8 +21,7 @@ namespace Liminal.Editor.TemplateSetup
             {
                 new TemplateSetupHomePage(),
                 new TemplateSetupNamePage(Application.companyName, Application.productName),
-                new TemplateSetupGeneratePage(),
-                new TemplateSetupScenePage(),
+                new TemplateSetupInfoPage()
             };
         }
 
