@@ -1,0 +1,15 @@
+-nowarn:0618
+-nowarn:0162
+-nowarn:0414
+-nowarn:0436
+-nowarn:0219
+-nowarn:8321
+-nowarn:0693
+-nowarn:0672
+-nowarn:0108
+-nowarn:0114
+-nowarn:1739
+-nowarn:0253
+-nowarn:0067
+-nowarn:1705
+-r:System.IO.Compression.FileSystem.dll
